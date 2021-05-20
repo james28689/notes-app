@@ -1,0 +1,35 @@
+.tab {
+    width: 100%;
+    overflow: hidden;
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin: 5px 5px 0 0;
+    padding: 15px;
+    border-radius: 10px;
+    transition: background-color 0.2s;
+
+    display: flex;
+  align-items: center;
+}
+
+.tab img {
+    height: 2.3rem;
+    padding: 10px;
+    border-radius: 10px;
+    float: left;
+}
+
+.tab p {
+    float: left;
+    margin: 0 0 0 10px;
+    padding: 0;
+    
+}
+
+.tab:hover, .selected {
+    background-color: #2e2f38;
+}
+
+.selected img {
+    background-color: #715bff;
+}
