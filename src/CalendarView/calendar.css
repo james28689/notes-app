@@ -1,0 +1,86 @@
+#calendarView {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 30% auto;
+    grid-template-rows: 40% auto;
+    grid-template-areas: 
+        "calendar eventDetails"
+        "timetable eventDetails";
+}
+
+.calendar {
+    grid-area: calendar;
+}
+
+.calendarButtons {
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.calendarButtons h2 {
+    font-size: 1.2rem;    
+}
+
+.calendarButtons img {
+    height: 1.3rem;
+    width: 1.3rem;
+}
+
+.calendarButtons img:first-of-type {
+    transform: rotate(180deg);
+    margin-left: auto;
+    margin-right: 0.6rem;
+}
+
+.calendarButtons img:last-of-type {
+    margin-right: 0.8rem;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    color: #999;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    overflow: hidden;
+}
+
+.days p {
+    text-align: center;
+}
+
+.day {
+    margin-bottom: 5px;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    transition: background-color 0.2s;
+}
+
+.day:hover {
+    background-color: #2e2f38;
+}
+
+.day.selected {
+    background-color: #715bff;
+}
+
+
+
+.timetable {
+    grid-area: timetable;
+}
+
+.eventDetails {
+    grid-area: eventDetails;
+    background-color: blue;
+}
+

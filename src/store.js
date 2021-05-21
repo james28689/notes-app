@@ -4,7 +4,7 @@ import Reducer from './reducer'
 
 
 const initialState = {
-    selected: 0
+    selected: 1
 };
 
 const Store = ({children}) => {
