@@ -18,6 +18,7 @@ function Main({ children }) {
                 Notes
                 </h2>
                 <p>This is the start of a design based off <a href="https://cdn.dribbble.com/users/65090/screenshots/14082104/media/8349b8ac58729f7ef4ae9b784081a824.png">this</a></p>
+                <p>Use this <a href="https://www.tiny.cloud/docs/quick-start/">this</a></p>
                 </div>
             }
 
