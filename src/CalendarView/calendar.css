@@ -41,7 +41,8 @@
 
 .days {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto;
+    /* grid-template-columns: auto auto auto auto auto auto auto; */
+    grid-template-columns: 14.2% 14.2%  14.2%  14.2%  14.2%  14.2% 14.2%;
     color: #999;
     font-size: 1rem;
     cursor: pointer;
