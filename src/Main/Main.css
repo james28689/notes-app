@@ -6,6 +6,15 @@
     min-height: 100vh !important;
 }
 
+/* .tox-edit-area, .tox-edit-area__iframe {
+    background-color: #1a1c22 !important;
+    
+}
+
+.mce-content-body {
+    color: white !important;
+}*/
+
 .tox-statusbar__branding {
     display: none;
 }
