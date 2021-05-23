@@ -1,7 +1,23 @@
 .App {
   display: grid;
-  grid-template-columns: 20vw auto;
+  grid-template-columns: max(20vw, 250px) auto;
   height: 100vh;
   width: 100vw;
-  background-color: green;
+  color: var(--text-color);
+}
+
+.dark {
+  --background-color: #1a1c22;
+  --sidebar-color:    #0f0f11;
+  --hover-color:      #2e2f38;
+  --highlight-color:  #715bff;
+  --text-color:       #fff;
+}
+
+.light {
+  --background-color: #fdfdfd;
+  --sidebar-color:    #f1f5fb;
+  --hover-color:      #d8dde2;
+  --highlight-color:  #9484ff;
+  --text-color:       #333;
 }

@@ -1,5 +1,5 @@
 #Sidebar {
-    background-color: #0f0f11;
+    background-color: var(--sidebar-color);
     padding: 2rem;
     position: relative;
 }

@@ -1,5 +1,5 @@
 #Main {
-    background-color: #1a1c22;
+    background-color: var(--background-color);
 }
 
 .tox-tinymce {
@@ -7,12 +7,12 @@
 }
 
 /* .tox-edit-area, .tox-edit-area__iframe {
-    background-color: #1a1c22 !important;
+    background-color: var(--background-color) !important;
     
 }
 
 .mce-content-body {
-    color: white !important;
+    color: var(--text-color) !important;
 }*/
 
 .tox-statusbar__branding {

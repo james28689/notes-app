@@ -8,7 +8,7 @@ import './App.css';
 function App() {
   return (
     <Store>
-      <div className="App">
+      <div className="App dark">
         <Sidebar/>
         <Main />
       </div>

@@ -10,6 +10,13 @@
         "timetable eventDetails";
 }
 
+@media (max-width: 1300px) {
+    #calendarView {
+        grid-template-columns: 100% 0;
+    }
+    
+}
+
 .calendar {
     grid-area: calendar;
 }
@@ -57,7 +64,7 @@
 .day {
     margin-bottom: 5px;
     text-align: center;
-    color: #fff;
+    color: var(--text-color);
     border-radius: 10px;
     width: 50px;
     height: 50px;
@@ -67,11 +74,11 @@
 }
 
 .day:hover {
-    background-color: #2e2f38;
+    background-color: var(--hover-color);
 }
 
 .day.selected {
-    background-color: #715bff;
+    background-color: var(--highlight-color);
 }
 
 
@@ -82,6 +89,5 @@
 
 .eventDetails {
     grid-area: eventDetails;
-    background-color: blue;
 }
 

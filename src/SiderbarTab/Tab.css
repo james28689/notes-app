@@ -27,9 +27,9 @@
 }
 
 .tab:hover, .selected {
-    background-color: #2e2f38;
+    background-color: var(--hover-color);
 }
 
 .selected img {
-    background-color: #715bff;
+    background-color: var(--highlight-color);
 }
