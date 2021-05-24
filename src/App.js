@@ -1,20 +1,30 @@
 import Sidebar from "./Sidebar/sidebar";
 import Main from "./Main/main";
-import Store from "./store";
 import './App.css';
 import UI from "./Login/login";
+import {Context} from './store';
+import React, {useContext} from 'react';
 
 
 function App() {
-  return (
-    <Store>
-      {/* <div className="App dark">
-        <Sidebar/>
-        <Main />
-      </div> */}
+  const [state] = useContext(Context);
 
-      <UI />
-    </Store>
+  return (
+      <div className="App dark">
+
+        {state.loggedIn === true &&
+        <>
+          <Sidebar/>
+          <Main />
+        </>
+        }
+
+        {state.loggedIn === false &&
+          <UI />
+        }
+      </div>
+
+      // <UI />
   );
 }
 

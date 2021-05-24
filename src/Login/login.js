@@ -1,5 +1,7 @@
 import { GoogleLogin, GoogleLogout } from "react-google-login";
 import env from "react-dotenv";
+import React, {useContext} from 'react';
+import {Context} from '../store';
 
 const refreshTokenSetup = (res) => {
   let refreshTiming = (res.tokenObj.expires_in || 3600 - 5 * 60) * 1000;
@@ -16,8 +18,13 @@ const refreshTokenSetup = (res) => {
 }
 
 function Login() {
+    const [state, dispatch] = useContext(Context);
+
+
   const handleLogin = async googleData => {
-    var res = await fetch("https://fauna-notes-api.herokuapp.com/auth/google", {
+    dispatch({type: 'SET_LOGIN', payload: true});
+
+    const res = await fetch("https://fauna-notes-api.herokuapp.com/auth/google", {
       method: "POST",
       body: JSON.stringify({
         token: googleData.tokenId
@@ -27,20 +34,7 @@ function Login() {
       }
     })
 
-    var data = await res.json()
-    console.log(data, data.ref);
-
-    var res = await fetch("https://fauna-notes-api.herokuapp.com/user/data", {
-      method: "POST",
-      body: JSON.stringify({
-        token: googleData.tokenId
-      }),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-
-    var data = await res.json()
+    const data = await res.json()
     console.log(data);
   }
 
@@ -50,7 +44,7 @@ function Login() {
         clientId={`${env.CLIENT_ID}`}
         buttonText="Login"
         onSuccess={handleLogin}
-        onFailure={handleLogin}
+        // onFailure={handleLogin}
         cookiePolicy={"single_host_origin"}
         style={{ marginTop: "100px" }}
         isSignedIn={true}
