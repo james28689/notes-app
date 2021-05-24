@@ -17,7 +17,7 @@ const refreshTokenSetup = (res) => {
 
 function Login() {
   const handleLogin = async googleData => {
-    const res = await fetch("https://fauna-notes-api.herokuapp.com/auth/google", {
+    var res = await fetch("https://fauna-notes-api.herokuapp.com/auth/google", {
       method: "POST",
       body: JSON.stringify({
         token: googleData.tokenId
@@ -27,8 +27,21 @@ function Login() {
       }
     })
 
-    const data = await res.json()
-    console.log(data)
+    var data = await res.json()
+    console.log(data, data.ref);
+
+    var res = await fetch("https://fauna-notes-api.herokuapp.com/user/data", {
+      method: "POST",
+      body: JSON.stringify({
+        token: googleData.tokenId
+      }),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+
+    var data = await res.json()
+    console.log(data);
   }
 
   return (
@@ -41,6 +54,10 @@ function Login() {
         cookiePolicy={"single_host_origin"}
         style={{ marginTop: "100px" }}
         isSignedIn={true}
+
+        render={renderProps => (
+            <button onClick={renderProps.onClick} disabled={renderProps.disabled}>This is my custom Google button</button>
+          )}
       />
     </div>
   )
