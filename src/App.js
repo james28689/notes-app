@@ -1,7 +1,7 @@
 import Sidebar from "./Sidebar/sidebar";
 import Main from "./Main/main";
 import './App.css';
-import UI from "./Login/login";
+import Login from "./Login/login";
 import {Context} from './store';
 import React, {useContext} from 'react';
 
@@ -20,7 +20,7 @@ function App() {
         }
 
         {state.loggedIn === false &&
-          <UI />
+          <Login />
         }
       </div>
 

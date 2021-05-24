@@ -73,13 +73,4 @@ function Logout() {
   )
 }
 
-function UI() {
-  return (
-    <div className="App">
-      <Login />
-      <Logout />
-    </div>
-  );
-}
-
-export default UI;
+export default Login;

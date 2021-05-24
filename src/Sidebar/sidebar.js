@@ -5,6 +5,7 @@ import notes from "../Icons/notes.svg";
 import Divider from "../Divider/divider";
 import Tab from "../SiderbarTab/tab";
 import Search from "../Search/search";
+import Logout from "../Login/logout";
 
 function Sidebar(props) {
 
@@ -22,7 +23,7 @@ function Sidebar(props) {
             }
         ]}/>
             <Divider />
-
+            <Logout />
 
             <Search />
         </div>
