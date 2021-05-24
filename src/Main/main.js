@@ -25,7 +25,7 @@ function Main({ children }) {
 
                 <Editor
                     apiKey="nluqabfk7ksn0arrulvq7smk1c0c64dnvy3iazhg6ajabrhx"
-                    initialValue="<p>This is the initial content of the editor.</p>"
+                    initialValue="<h1>Welcome to Notes</h1><p>This is a rich text editor, with support for slash commands.</p>"
                     init={{
                         menubar: false,
                         skin_url: `${process.env.PUBLIC_URL}skins/ui/custom-dark`,

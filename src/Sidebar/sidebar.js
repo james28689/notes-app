@@ -6,6 +6,8 @@ import Divider from "../Divider/divider";
 import Tab from "../SiderbarTab/tab";
 import Search from "../Search/search";
 
+import FolderTree, { testData } from 'react-folder-tree';
+
 function Sidebar(props) {
 
     return (
@@ -22,6 +24,7 @@ function Sidebar(props) {
             }
         ]}/>
             <Divider />
+
 
             <Search />
         </div>
