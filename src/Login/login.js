@@ -57,20 +57,5 @@ function Login() {
   )
 }
 
-function Logout() {
-  const onSuccess = () => {
-    alert("Logout completed successfully.")
-  }
-
-  return (
-    <div>
-      <GoogleLogout
-        clientId={`${env.CLIENT_ID}`}
-        buttonText="Logout"
-        onLogoutSuccess={onSuccess}
-      />
-    </div>
-  )
-}
 
 export default Login;

@@ -4,8 +4,11 @@ import React, {useContext} from 'react';
 import {Context} from '../store';
 
 function Logout() {
+    const [state, dispatch] = useContext(Context);
+
     const onSuccess = () => {
-      alert("Logout completed successfully.")
+        dispatch({type: 'SET_LOGIN', payload: false});
+        alert("Logout completed successfully.")
     }
   
     return (
@@ -17,6 +20,6 @@ function Logout() {
         />
       </div>
     )
-  }
+}
 
 export default Logout;
