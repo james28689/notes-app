@@ -31,7 +31,7 @@ function Main({ children }) {
                         skin_url: `${process.env.PUBLIC_URL}skins/ui/custom-dark`,
                         content_css: `${process.env.PUBLIC_URL}skins/content/custom-dark/content.min.css`,
                         icons: "thin",
-                        content_style: "@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');",
+                        content_style: "@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');body { font-family: 'Montserrat', sans-serif; } h1,h2,h3,h4,h5,h6 { font-family: 'Lato', sans-serif; }",
 
 
 
