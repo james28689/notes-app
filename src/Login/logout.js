@@ -8,7 +8,6 @@ function Logout() {
 
     const onSuccess = () => {
         dispatch({type: 'SET_LOGIN', payload: false});
-        alert("Logout completed successfully.")
     }
   
     return (
@@ -17,6 +16,10 @@ function Logout() {
           clientId={`${env.CLIENT_ID}`}
           buttonText="Logout"
           onLogoutSuccess={onSuccess}
+
+          render={renderProps => (
+            <button className="logout" onClick={renderProps.onClick} disabled={renderProps.disabled}>Logout</button>
+          )}
         />
       </div>
     )

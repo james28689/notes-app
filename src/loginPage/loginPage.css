@@ -1,0 +1,15 @@
+.loginPage {
+    background-color: var(--background-color);
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    margin-top: 45vh;
+    transform: translateY(-50%);
+}
+
+.container h1 {
+    font-size: 5rem;
+}

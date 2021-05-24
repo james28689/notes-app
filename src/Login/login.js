@@ -2,6 +2,7 @@ import { GoogleLogin, GoogleLogout } from "react-google-login";
 import env from "react-dotenv";
 import React, {useContext} from 'react';
 import {Context} from '../store';
+import "./login.css";
 
 const refreshTokenSetup = (res) => {
   let refreshTiming = (res.tokenObj.expires_in || 3600 - 5 * 60) * 1000;
@@ -50,7 +51,7 @@ function Login() {
         isSignedIn={true}
 
         render={renderProps => (
-            <button onClick={renderProps.onClick} disabled={renderProps.disabled}>This is my custom Google button</button>
+            <button className="login" onClick={renderProps.onClick} disabled={renderProps.disabled}>Login</button>
           )}
       />
     </div>
