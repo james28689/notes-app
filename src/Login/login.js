@@ -5,7 +5,7 @@ import {Context} from '../store';
 import "./login.css";
 
 function Login() {
-  const [dispatch] = useContext(Context);
+  const [state, dispatch] = useContext(Context);
 
   const handleLogin = async googleData => {
     dispatch({type: 'SET_LOGIN', payload: true});
