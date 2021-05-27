@@ -5,11 +5,12 @@ import {Context} from '../store';
 import "./login.css";
 
 function Login() {
-    const [dispatch] = useContext(Context);
-
+  const [dispatch] = useContext(Context);
 
   const handleLogin = async googleData => {
     dispatch({type: 'SET_LOGIN', payload: true});
+
+    console.log("Handling login!")
 
     const res = await fetch("https://fauna-notes-api.herokuapp.com/auth/google", {
       method: "POST",
