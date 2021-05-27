@@ -1,11 +1,11 @@
-import { GoogleLogin, GoogleLogout } from "react-google-login";
+import { GoogleLogin } from "react-google-login";
 import env from "react-dotenv";
 import React, {useContext} from 'react';
 import {Context} from '../store';
 import "./login.css";
 
 function Login() {
-    const [state, dispatch] = useContext(Context);
+    const [dispatch] = useContext(Context);
 
 
   const handleLogin = async googleData => {
@@ -23,7 +23,7 @@ function Login() {
 
     const data = await res.json()
     console.log(data);
-    console.log(data.data.name)
+    // console.log(data.data.name)
   }
 
   return (

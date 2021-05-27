@@ -1,4 +1,4 @@
-import { GoogleLogin, GoogleLogout } from "react-google-login";
+import { GoogleLogout } from "react-google-login";
 import env from "react-dotenv";
 import React, {useContext} from 'react';
 import {Context} from '../store';
