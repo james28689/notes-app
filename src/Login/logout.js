@@ -4,7 +4,7 @@ import React, {useContext} from 'react';
 import {Context} from '../store';
 
 function Logout() {
-    const [state, dispatch] = useContext(Context);
+    const [dispatch] = useContext(Context);
 
     const onSuccess = () => {
         dispatch({type: 'SET_LOGIN', payload: false});
