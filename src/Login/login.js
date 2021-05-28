@@ -13,7 +13,7 @@ function Login() {
 
     console.log("Handling login!")
 
-    const res = await fetch("https://ww-notes-api.herokuapp.com/auth/google", {
+    const res = await fetch("https://api.watling.dev/auth/google", {
       credentials: "include",
       method: "POST",
       body: JSON.stringify({
@@ -30,7 +30,7 @@ function Login() {
 
     
 
-    const notesRes = await axios.get("https://ww-notes-api.herokuapp.com/note/user", { withCredentials: true })
+    const notesRes = await axios.get("https://api.watling.dev/note/user", { withCredentials: true })
     const noteData = await notesRes.json()
     console.log(noteData)
   }
