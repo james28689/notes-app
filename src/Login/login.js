@@ -3,7 +3,6 @@ import env from "react-dotenv";
 import React, {useContext} from 'react';
 import {Context} from '../store';
 import "./login.css";
-import axios from "axios";
 
 function Login() {
   const [state, dispatch] = useContext(Context);
@@ -30,7 +29,11 @@ function Login() {
 
     
 
-    const notesRes = await axios.get("https://api.watling.dev/note/user", { withCredentials: true })
+    const notesRes = await fetch("https://api.watling.dev/note/user", {
+      credentials: "include",
+      method: "GET",
+      mode: "cors"
+    })
     const noteData = await notesRes.json()
     console.log(noteData)
   }
