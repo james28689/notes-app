@@ -2,45 +2,21 @@
 import React, {createContext, useReducer} from "react";
 import Reducer from './reducer'
 
-
 const initialState = {
     selected: 0,
-    loggedIn: false,
+    loggedIn: true,
     selectedDay: 25,
     apiKey: null,
 
-    folderTreeState: [
-        {
-        name: "School",
-        id: "asdasdvsfsd",
-        open: true,
-        type: "folder",
-        children: [
-            {
-                name: "Physics",
-                id: "skjdflsajdnv",
-                type: "folder",
-                open: true,
-                children: [
-                    {
-                        name: "Revision",
-                        type: "file",
-                        id: "sfsdfsdf"
-                    }
-                ]
-            },
-
-            {
-                name: "Exam Timetable",
-                type: "file",
-                id: "dfgdfg"
-            }
-        ]
-        },
-
-        
-    ]
-    
+    NotesData: [
+        { id: 1, parentId: null, name: "School", type: "folder" },
+        { id: 2, parentId: 1,    name: "Physics", type: "folder" },
+        { id: 3, parentId: 2,    name: "Revision", type: "file", content: "sdfasdf" },
+        { id: 5, parentId: 2,    name: "Particles", type: "file", content: "tsds"},
+        { id: 4, parentId: 1,    name: "Exam Timetable", type: "folder" },
+        { id: 6, parentId: 4,    name: "Home", type: "file", content: "test content"}
+    ],
+    openFile: null
 };
 
 const Store = ({children}) => {

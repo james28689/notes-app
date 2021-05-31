@@ -15,10 +15,10 @@ const Reducer = (state, action) => {
                 ...state,
                 apiKey: action.payload
             };
-        case 'SET_TREE':
+        case 'SET_OPEN_FILE':
             return {
                 ...state,
-                folderTreeState: action.payload
+                openFile: action.payload
             }
         default:
             return state;

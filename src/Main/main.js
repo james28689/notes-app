@@ -9,8 +9,6 @@ function Main({ children }) {
 
     const [state] = useContext(Context);
 
-    console.log(process.env.PUBLIC_URL);
-
     return (
         <div id="Main">
 
@@ -27,7 +25,7 @@ function Main({ children }) {
 
                 <Editor
                     apiKey="nluqabfk7ksn0arrulvq7smk1c0c64dnvy3iazhg6ajabrhx"
-                    initialValue="<h1>Welcome to Notes</h1><p>This is a rich text editor, with support for slash commands.</p>"
+                    initialValue={(state.openFile !== null) ? state.NotesData.find(x => x.id === state.openFile).content : "<h1>Welcome to Notes</h1><p>This is a rich text editor, with support for slash commands.</p><p>You can select a file in the file tree to view its content, or click on folders in the tree to collapse them."}
                     init={{
                         menubar: false,
                         skin_url: `/skins/ui/custom-dark`,
