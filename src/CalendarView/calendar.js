@@ -38,7 +38,7 @@ function Calendar( props ) {
                     <div className="day"><p>18</p></div>
                     <div className="day"><p>19</p></div>
                     <div className="day"><p>20</p></div>
-                    <div className="day selected"><p>21</p></div>
+                    <div className="day"><p>21</p></div>
                     <div className="day"><p>22</p></div>
                     <div className="day"><p>23</p></div>
                     <div className="day"><p>24</p></div>

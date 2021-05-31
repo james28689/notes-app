@@ -2,10 +2,12 @@
 import React, {createContext, useReducer} from "react";
 import Reducer from './reducer'
 
+var d = new Date();
+
 const initialState = {
     selected: 0,
-    loggedIn: true,
-    selectedDay: 25,
+    loggedIn: false,
+    selectedDay: d.getDay(),
     apiKey: null,
 
     NotesData: [
