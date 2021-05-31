@@ -10,7 +10,7 @@ function App() {
   const [state] = useContext(Context);
 
   return (
-      <div className="App light">
+      <div className="App dark">
 
         {state.loggedIn === true &&
         <>
