@@ -19,7 +19,7 @@ function Calendar( props ) {
                     <p>SAT</p>
                     <p>SUN</p>
                     <div className="day"><p>1</p></div>
-                    <div className="day"><p>2</p></div>
+                    <div className="day selected"><p>2</p></div>
                     <div className="day"><p>3</p></div>
                     <div className="day"><p>4</p></div>
                     <div className="day"><p>5</p></div>
