@@ -9,6 +9,8 @@ function Main({ children }) {
 
     const [state] = useContext(Context);
 
+    console.log(process.env.PUBLIC_URL);
+
     return (
         <div id="Main">
 
@@ -36,7 +38,7 @@ function Main({ children }) {
 
 
                         external_plugins: {
-                            pluginId: `http://localhost:3000/slashcommands/plugin.js`
+                            slashcommands: `http://localhost:3000/slashcommands/plugin.js`
                         },
 
 

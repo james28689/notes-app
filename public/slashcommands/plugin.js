@@ -79,7 +79,7 @@ tinymce.PluginManager.add('slashcommands', function (editor) {
     return {
         getMetadata: function () {
             return {
-                name: 'slashcommands',
+                name: 'Slash Commands',
                 url: 'https://example.com/docs/customplugin'
             };
         }
