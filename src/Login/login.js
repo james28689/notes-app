@@ -4,39 +4,54 @@ import React, {useContext} from 'react';
 import {Context} from '../store';
 import "./login.css";
 
+// const refreshTokenSetup = (res) => {
+//   let refreshTiming = (res.tokenObj.expires_in || 3600 - 5 * 60) * 1000;
+
+//   const refreshToken = async () => {
+//     const newAuthRes = await res.reloadAuthResponse();
+//     refreshTiming = (newAuthRes.expires_in || 3600 - 5 * 60) * 1000;
+//     console.log("newAuthRes:", newAuthRes);
+
+//     console.log("new auth token", newAuthRes.id_token);
+//   }
+
+//   setTimeout(refreshToken, refreshTiming);
+// }
+
 function Login() {
-  const [state, dispatch] = useContext(Context);
+    const [state, dispatch] = useContext(Context);
 
-  const handleLogin = async googleData => {
-    dispatch({type: 'SET_LOGIN', payload: true});
 
-    console.log("Handling login!")
-
-    const res = await fetch("https://api.watling.dev/auth/google", {
-      credentials: "include",
-      method: "POST",
-      body: JSON.stringify({
-        token: googleData.tokenId
-      }),
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json"
-      },
-    })
-
-    const data = await res.json()
-    console.log(data);
-
-    
-
-    const notesRes = await fetch("https://api.watling.dev/note/user", {
-      credentials: "include",
-      method: "GET",
-      mode: "cors"
-    })
-    const noteData = await notesRes.json()
-    console.log(noteData)
-  }
+    const handleLogin = async googleData => {
+      dispatch({type: 'SET_LOGIN', payload: true});
+  
+      console.log("Handling login!")
+  
+      const res = await fetch("https://api.watling.dev/auth/google", {
+        credentials: "include",
+        method: "POST",
+        body: JSON.stringify({
+          token: googleData.tokenId
+        }),
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json"
+        },
+      })
+  
+      const data = await res.json()
+      console.log(data);
+  
+      
+  
+      const notesRes = await fetch("https://api.watling.dev/note/user", {
+        credentials: "include",
+        method: "GET",
+        mode: "cors"
+      })
+      const noteData = await notesRes.json()
+      console.log(noteData)
+    }
 
   return (
     <div>

@@ -1,7 +1,7 @@
 .login {
     background-color: transparent;
     border: 2px solid var(--highlight-color);
-    color: white;
+    color: var(--text-color);
     font-family: "Montserrat";
     font-size: 2rem;
     padding: 1.2rem;
@@ -14,10 +14,10 @@
 }
 
 .logout {
+    color: var(--text-color);
     background-color: transparent;
     border: 2px solid var(--highlight-color);
     width: 100%;
-    color: white;
     font-family: "Montserrat";
     font-size: 1rem;
     padding: 0.8rem;

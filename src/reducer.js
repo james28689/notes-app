@@ -10,6 +10,16 @@ const Reducer = (state, action) => {
                 ...state,
                 loggedIn: action.payload
             };
+        case 'SET_KEY':
+            return {
+                ...state,
+                apiKey: action.payload
+            };
+        case 'SET_TREE':
+            return {
+                ...state,
+                folderTreeState: action.payload
+            }
         default:
             return state;
     }

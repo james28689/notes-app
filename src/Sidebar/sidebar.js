@@ -6,6 +6,7 @@ import Divider from "../Divider/divider";
 import Tab from "../SiderbarTab/tab";
 import Search from "../Search/search";
 import Logout from "../Login/logout";
+import Tree from "../FolderTree/folderTree";
 
 function Sidebar(props) {
 
@@ -23,9 +24,14 @@ function Sidebar(props) {
             }
         ]}/>
             <Divider />
-            <Logout />
 
-            <Search />
+            <Tree />
+
+            <div className="bottom">
+                <Logout />
+                <Search />
+            </div>
+            
         </div>
     )
 }

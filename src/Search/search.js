@@ -4,7 +4,7 @@ import search from "../Icons/search.svg";
 function Search() {
     return (
         <div className="search">
-            <img src={search} alt=""/>
+            {/* <img src={search} alt=""/> */}
             <input placeholder="Search"></input>
         </div>
     )
