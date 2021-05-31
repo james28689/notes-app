@@ -30,15 +30,15 @@ function Main({ children }) {
                     initialValue="<h1>Welcome to Notes</h1><p>This is a rich text editor, with support for slash commands.</p>"
                     init={{
                         menubar: false,
-                        skin_url: `${process.env.PUBLIC_URL}skins/ui/custom-dark`,
-                        content_css: `${process.env.PUBLIC_URL}skins/content/custom-dark/content.min.css`,
+                        skin_url: `/skins/ui/custom-dark`,
+                        content_css: `/skins/content/custom-dark/content.min.css`,
                         icons: "thin",
-                        content_style: "@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');body { font-family: 'Montserrat', sans-serif; } h1,h2,h3,h4,h5,h6 { font-family: 'Lato', sans-serif; }",
+                        content_style: "@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,700&display=swap');body { font-family: 'Montserrat', sans-serif; } h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; font-weight: 700; }",
 
 
 
                         external_plugins: {
-                            slashcommands: `http://localhost:3000/slashcommands/plugin.js`
+                            slashcommands: `/slashcommands/plugin.js`
                         },
 
 
