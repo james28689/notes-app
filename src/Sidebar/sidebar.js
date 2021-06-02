@@ -7,8 +7,11 @@ import Tab from "../SiderbarTab/tab";
 import Search from "../Search/search";
 import Logout from "../Login/logout";
 import Tree from "../FolderTree/folderTree";
+import React, {useContext} from 'react';
+import {Context} from '../store';
 
 function Sidebar(props) {
+    const [state] = useContext(Context);
 
     return (
         <div id="Sidebar">
@@ -25,7 +28,10 @@ function Sidebar(props) {
         ]}/>
             <Divider />
 
-            <Tree />
+            {state.selected == 0 &&
+                <Tree />
+            }
+            
 
             <div className="bottom">
                 <Logout />

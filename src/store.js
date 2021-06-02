@@ -9,6 +9,7 @@ const initialState = {
     loggedIn: false,
     selectedDay: d.getDay(),
     apiKey: null,
+    theme: "dark",
 
     NotesData: [
         { id: 1, parentId: null, name: "School", type: "folder" },
