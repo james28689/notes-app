@@ -35,3 +35,7 @@
 .file:hover {
     color: var(--highlight-color);
 }
+
+.openFile {
+    color: var(--highlight-color);
+}

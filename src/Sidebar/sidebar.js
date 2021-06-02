@@ -28,9 +28,7 @@ function Sidebar(props) {
         ]}/>
             <Divider />
 
-            {state.selected == 0 &&
-                <Tree />
-            }
+            <Tree />
             
 
             <div className="bottom">

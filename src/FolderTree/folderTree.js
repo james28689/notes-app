@@ -28,12 +28,11 @@ function File(props) {
 
     const openFile = () => {
         dispatch({type: "SET_OPEN_FILE", payload: props.id});
-
-        console.log(state);
+        dispatch({type: "SET_PAGE", payload: 0})
     }
 
     return (
-        <div className="file" onClick= {openFile}>
+        <div className={"file " + ((props.id === state.openFile) ? "openFile" : "")} onClick= {openFile}>
             {props.name}
         </div>
 
