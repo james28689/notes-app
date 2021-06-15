@@ -57,6 +57,7 @@ function RenderTree(props) {
 }
 
 function list_to_tree(list) {
+    console.log(list);
 
     if(list.length == 1) {
         return [];
