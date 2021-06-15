@@ -33,7 +33,7 @@ const Reducer = (state, action) => {
 
             }
         case "LOAD_NOTE":
-            state.NotesData.append(action.payload);
+            state.NotesData.push(action.payload);
 
             console.log(state);
 
