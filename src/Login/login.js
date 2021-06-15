@@ -51,11 +51,17 @@ function Login() {
       })
       const noteData = await notesRes.json();
 
+      var folderTemplate = { id: 1, parentId: null, name: "", type: "folder" };
+
       for(var n in noteData) {
         if("noteID" in noteData[n]) {
           console.log("Note: ", noteData[n]);
         } else if("folderID" in noteData[n]) {
-          console.log("Folder: ", noteData[n])
+          var folder = folderTemplate;
+          folder.id = noteData[n].noteID;
+          folder.parentId = noteData[n].parentID;
+          folder.name = noteData[n].name;
+          console.log("Folder: ", noteData[n], folder)
         }
       }
       console.log(noteData);
