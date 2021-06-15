@@ -49,8 +49,16 @@ function Login() {
         method: "GET",
         mode: "cors"
       })
-      const noteData = await notesRes.json()
-      console.log(noteData);
+      const noteData = await notesRes.json();
+
+      for(var n in noteData) {
+        if("NoteID" in noteData[n]) {
+          console.log("Note: ", noteData[n]);
+        } else if("FolderID" in noteData[n]) {
+          console.log("Folder: ", noteData[n])
+        }
+      }
+      // console.log(noteData);
     }
 
   return (
