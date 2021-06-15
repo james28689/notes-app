@@ -19,4 +19,24 @@ h1 {
     overflow-y: scroll;
     overflow-x: hidden;
     margin-bottom: 1rem;
+    padding-right: 5px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--sidebar-color);
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--background-color);
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--highlight-color);
 }

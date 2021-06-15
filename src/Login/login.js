@@ -23,7 +23,6 @@ function Login() {
 
 
     const handleLogin = async googleData => {
-      dispatch({type: 'SET_LOGIN', payload: true});
   
       console.log("Handling login!")
   
@@ -41,6 +40,7 @@ function Login() {
   
       const data = await res.json()
       console.log(data);
+      dispatch({type: 'SET_LOGIN', payload: true});
   
       
   
@@ -50,7 +50,7 @@ function Login() {
         mode: "cors"
       })
       const noteData = await notesRes.json()
-      console.log(noteData)
+      console.log(noteData);
     }
 
   return (

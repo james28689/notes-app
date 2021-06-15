@@ -6,10 +6,10 @@ var d = new Date();
 
 const initialState = {
     selected: 1,
-    loggedIn: true,
+    loggedIn: false,
     selectedDay: d.getDay(),
     apiKey: null,
-    theme: "dark",
+    theme: "light",
 
     NotesData: [
         { id: 1, parentId: null, name: "School", type: "folder" },

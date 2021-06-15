@@ -26,7 +26,7 @@ const Reducer = (state, action) => {
             if(index !== -1) {
                 state.NotesData[index].content = action.payload;
             }
-            console.log(state);
+            console.log(state.NotesData);
 
             return {
                 ...state,
