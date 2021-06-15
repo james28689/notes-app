@@ -51,17 +51,23 @@ function Login() {
       })
       const noteData = await notesRes.json();
 
-      var folderTemplate = { id: 1, parentId: null, name: "", type: "folder" };
+      var folderTemplate = { id: 0, parentId: null, name: "", type: "folder" };
+      var noteTemplate =   { id: 0, parentId: 0,    name: "", type: "file", content: ""};
 
       for(var n in noteData) {
         if("noteID" in noteData[n]) {
-          console.log("Note: ", noteData[n]);
+          var note = noteTemplate;
+          note.id = noteData[n].noteID;
+          note.parentId = noteData[n].parentID;
+          note.name = noteData[n].name;
+          note.content = noteData[n].content;
+          console.log("File: ", noteData[n], note);
         } else if("folderID" in noteData[n]) {
           var folder = folderTemplate;
-          folder.id = noteData[n].noteID;
+          folder.id = noteData[n].folderID;
           folder.parentId = noteData[n].parentID;
           folder.name = noteData[n].name;
-          console.log("Folder: ", noteData[n], folder)
+          console.log("Folder: ", noteData[n], folder);
         }
       }
       console.log(noteData);
