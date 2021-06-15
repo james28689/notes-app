@@ -33,9 +33,9 @@ const Reducer = (state, action) => {
 
             }
         case "LOAD_NOTE":
-            state.NotesData.push(action.payload);
+            // state.NotesData.push(action.payload);
 
-            // console.log(state.NotesData);
+            console.log(action.payload);
 
             return {
                 ...state
