@@ -151,7 +151,7 @@ window.env = {
   "VSCODE_GIT_IPC_HANDLE": "/run/user/1000/vscode-git-087e35b04b.sock",
   "TERM_PROGRAM": "vscode",
   "npm_package_eslintConfig_extends_0": "react-app",
-  "npm_package_gitHead": "3ef9cca274ffab0ee695b9e889e25cd9ffc73827",
+  "npm_package_gitHead": "0be29b4bc49941ff6a9364df711470ef189de0fb",
   "npm_config_fund": "true",
   "npm_config_fetch_retry_maxtimeout": "60000",
   "npm_config_loglevel": "notice",

@@ -51,10 +51,10 @@ function Login() {
       })
       const noteData = await notesRes.json();
 
-      console.log(noteData);
-      for(var n in noteData) {
-        dispatch({type: "LOAD_NOTE", payload: noteData[n]});
-      }
+      console.log("Response: ", noteData);
+      // for(var n in noteData) {
+      //   dispatch({type: "LOAD_NOTE", payload: noteData[n]});
+      // }
     }
 
   return (
