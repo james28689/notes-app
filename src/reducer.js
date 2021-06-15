@@ -32,6 +32,15 @@ const Reducer = (state, action) => {
                 ...state,
 
             }
+        case "LOAD_NOTE":
+            state.NotesData.append(action.payload);
+
+            console.log(state);
+
+            return {
+                ...state
+            }
+
         default:
             return state;
     }
