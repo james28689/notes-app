@@ -57,14 +57,17 @@ function RenderTree(props) {
 }
 
 function list_to_tree(list) {
+
+    if(list.length == 1) {
+        return [];
+    }
+
     var map = {}, node, roots = [], i;
     
     for (i = 0; i < list.length; i += 1) {
       map[list[i].id] = i; // initialize the map
       list[i].children = []; // initialize the children
     }
-    
-    console.log(list);
 
     for (i = 0; i < list.length; i += 1) {
       node = list[i];
