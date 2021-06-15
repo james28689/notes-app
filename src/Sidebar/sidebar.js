@@ -15,22 +15,26 @@ function Sidebar(props) {
 
     return (
         <div id="Sidebar">
-            <h1>Notes</h1>
-            <Tab items= {[
-            {
-                "name": "Notes",
-                "icon": notes
-            },
-            {
-                "name": "Calendar",
-                "icon": calendar
-            }
-        ]}/>
-            <Divider />
 
-            <Tree />
+            <div className="top">
+                <h1>Notes</h1>
+                <Tab items= {[
+                {
+                    "name": "Notes",
+                    "icon": notes
+                },
+                {
+                    "name": "Calendar",
+                    "icon": calendar
+                }
+                ]}/>
+                <Divider />
+            </div>
+
+            <div className="middle">
+                <Tree />
+            </div>
             
-
             <div className="bottom">
                 <Logout />
                 <Search />
