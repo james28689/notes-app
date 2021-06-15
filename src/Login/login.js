@@ -52,13 +52,13 @@ function Login() {
       const noteData = await notesRes.json();
 
       for(var n in noteData) {
-        if("NoteID" in noteData[n]) {
+        if("noteID" in noteData[n]) {
           console.log("Note: ", noteData[n]);
-        } else if("FolderID" in noteData[n]) {
+        } else if("folderID" in noteData[n]) {
           console.log("Folder: ", noteData[n])
         }
       }
-      // console.log(noteData);
+      console.log(noteData);
     }
 
   return (
