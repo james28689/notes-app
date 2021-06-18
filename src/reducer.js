@@ -37,7 +37,7 @@ const Reducer = (state, action) => {
             // })
 
             var xhr = new XMLHttpRequest();
-            var url = `https://api.watling.dev/note/update/${changedNotesData[index]id}`;
+            var url = `https://api.watling.dev/note/update/${changedNotesData[index].id}`;
             xhr.open("PUT", url, true);
             xhr.setRequestHeader("Content-Type", "application/json");
             xhr.withCredentials = true;
