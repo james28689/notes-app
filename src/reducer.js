@@ -31,7 +31,7 @@ const Reducer = (state, action) => {
 
             const updatedNotesRes = fetch(`https://api.watling.dev/note/update/${changedNotesData[index].id}`, {
                 credentials: "include",
-                method: "GET",
+                method: "PUT",
                 mode: "cors",
                 body: changedNotesData[index]
             })
