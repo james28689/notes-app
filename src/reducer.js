@@ -29,12 +29,20 @@ const Reducer = (state, action) => {
             }
             console.log("UPDATE_NOTE");
 
-            const updatedNotesRes = fetch(`https://api.watling.dev/note/update/${changedNotesData[index].id}`, {
-                credentials: "include",
-                method: "PUT",
-                mode: "cors",
-                body: changedNotesData[index]
-            })
+            // const updatedNotesRes = fetch(`https://api.watling.dev/note/update/${changedNotesData[index].id}`, {
+            //     credentials: "include",
+            //     method: "PUT",
+            //     mode: "cors",
+            //     body: changedNotesData[index]
+            // })
+
+            var xhr = new XMLHttpRequest();
+            var url = `https://api.watling.dev/note/update/${changedNotesData[index]id}`;
+            xhr.open("PUT", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.withCredentials = true;
+            var data = JSON.stringify(changedNotesData[index])
+            xhr.send(data);
 
             return {
                 ...state,
