@@ -33,12 +33,13 @@ const Reducer = (state, action) => {
 
             }
         case "LOAD_NOTE":
-            state.NotesData = action.payload;
+            // state.NotesData = action.payload;
 
-            console.log(state);
+            // console.log(state);
 
             return {
-                ...state
+                ...state,
+                NotesData: action.payload;
             }
 
         default:
