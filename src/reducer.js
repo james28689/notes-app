@@ -22,15 +22,16 @@ const Reducer = (state, action) => {
             }
         case 'UPDATE_NOTE':
             var index = state.NotesData.findIndex((x => x.id === state.openFile));
+            var changedNotesData = state.NotesData
             
             if(index !== -1) {
-                state.NotesData[index].content = action.payload;
+                changedNotesData[index].content = action.payload;
             }
             console.log("UPDATE_NOTE");
 
             return {
                 ...state,
-
+                NotesData: changedNotesData
             }
         case "LOAD_NOTE":
             // state.NotesData = action.payload;

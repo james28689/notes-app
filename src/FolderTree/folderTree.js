@@ -62,6 +62,7 @@ function list_to_tree(list) {
     // if(list.length == 1) {
     //     return [];
     // }
+    console.log(list)
 
     var map = {}, node, roots = [], i;
     
