@@ -86,8 +86,8 @@ function FolderTree() {
     const [state] = useContext(Context);
 
     return (
-        <h1>hi</h1>
-        // <RenderTree item= {list_to_tree(state.NotesData)}></RenderTree>
+        // <h1>hi</h1>
+        <RenderTree item= {list_to_tree(state.NotesData)}></RenderTree>
     )
 }
 
