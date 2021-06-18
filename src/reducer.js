@@ -39,7 +39,7 @@ const Reducer = (state, action) => {
 
             return {
                 ...state,
-                NotesData: action.payload;
+                NotesData: action.payload
             }
 
         default:
