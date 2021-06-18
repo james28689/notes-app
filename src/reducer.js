@@ -35,7 +35,6 @@ const Reducer = (state, action) => {
                 mode: "cors",
                 body: changedNotesData[index]
             })
-            .then( console.log(updatedNotesRes.json()))
 
             return {
                 ...state,
