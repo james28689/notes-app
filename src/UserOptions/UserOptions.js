@@ -22,7 +22,7 @@ function Logout() {
   
     return (
         <div class="userContainer">
-            <button onClick={toggleTheme} className="settings"><img src={settings}></img></button>
+            <button onClick={toggleTheme} className="settings"><img className="icon" src={settings}></img></button>
         <GoogleLogout
           clientId={`${env.CLIENT_ID}`}
           buttonText="Logout"

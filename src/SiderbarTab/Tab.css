@@ -30,6 +30,10 @@
     background-color: var(--hover-color);
 }
 
-.selected img {
+.imgContainer {
+    border-radius: 10px;
+}
+
+.selected .imgContainer {
     background-color: var(--highlight-color);
 }

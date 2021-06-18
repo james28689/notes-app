@@ -13,7 +13,9 @@ function Tab(props) {
             { props.items.map((item, key) => {
                 return (
                     <div key={key} className={`tab ${key === state.selected ? "selected" : ""}`} onClick={() => {dispatch({type: 'SET_PAGE', payload: key});}}>
-                        <img src={item.icon} alt=""/>
+                        <div className="imgContainer">
+                            <img className="icon" src={item.icon} alt=""/>
+                        </div>
                         <p>
                             { item.name }
                         </p>

@@ -13,7 +13,7 @@ function Folder(props) {
     return (
         <div className={"folder " + (open ? "" : "closed") }>
             <div onClick={ToggleShow} name={props.name} className="folderInfo">
-                <img src={ caret } alt=">"></img>
+                <img className="icon" src={ caret } alt=">"></img>
                 { props.name }
             </div>
             <div className="folderChildren">

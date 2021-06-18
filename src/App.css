@@ -12,6 +12,7 @@
   --hover-color:      #2e2f38;
   --highlight-color:  #715bff;
   --text-color:       #fff;
+  --icon-filter:   invert(0);
 }
 
 .light {
@@ -20,4 +21,9 @@
   --hover-color:      #d8dde2;
   --highlight-color:  #9484ff;
   --text-color:       #333;
+  --icon-filter: invert(100%);
+}
+
+.icon {
+  filter: var(--icon-filter);
 }

@@ -32,6 +32,8 @@
     height: 1.3rem;
     margin: 0;
     padding: 0;
+    /* filter: invert(180); */
+    filter: var(--icon-filter);
     /* background-color: red; */
 }
 
