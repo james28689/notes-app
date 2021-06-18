@@ -35,7 +35,7 @@ const Reducer = (state, action) => {
         case "LOAD_NOTE":
             state.NotesData = action.payload;
 
-            // console.log(state.NotesData);
+            console.log(state);
 
             return {
                 ...state
