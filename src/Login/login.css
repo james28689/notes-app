@@ -12,19 +12,3 @@
 .login:hover {
     background-color: var(--highlight-color);
 }
-
-.logout {
-    color: var(--text-color);
-    background-color: transparent;
-    border: 2px solid var(--highlight-color);
-    width: 100%;
-    font-family: "Montserrat";
-    font-size: 1rem;
-    padding: 0.8rem;
-    border-radius: 1rem;
-    transition: background-color 0.2s;
-}
-
-.logout:hover {
-    background-color: var(--highlight-color);
-}

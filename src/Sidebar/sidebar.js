@@ -5,7 +5,7 @@ import notes from "../Icons/notes.svg";
 import Divider from "../Divider/divider";
 import Tab from "../SiderbarTab/tab";
 import Search from "../Search/search";
-import Logout from "../Login/logout";
+import UserOptions from "../UserOptions/UserOptions";
 import Tree from "../FolderTree/folderTree";
 import React, {useContext} from 'react';
 import {Context} from '../store';
@@ -36,7 +36,7 @@ function Sidebar(props) {
             </div>
             
             <div className="bottom">
-                <Logout />
+                <UserOptions />
                 <Search />
             </div>
             

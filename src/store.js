@@ -6,7 +6,7 @@ var d = new Date();
 
 const initialState = {
     selected: 1,
-    loggedIn: false,
+    loggedIn: true,
     selectedDay: d.getDay(),
     apiKey: null,
     theme: "light",
