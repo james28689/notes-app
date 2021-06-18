@@ -48,7 +48,7 @@ function RenderTree(props) {
                 return <Folder id={item.id} key={key} name={ item.name } open={(item.children.length > 0 ? true : false)} children={<RenderTree item={item.children} ></RenderTree>}></Folder>
             }
             return (
-                <File key={key} name={ item.name } id={ item.id }></File>
+                <File key={key} name={ item.title } id={ item.id }></File>
             )
         }
         )}
