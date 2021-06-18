@@ -29,13 +29,13 @@ const Reducer = (state, action) => {
             }
             console.log("UPDATE_NOTE");
 
-            const updatedNotesRes = await fetch(`https://api.watling.dev/note/update/${changedNotesData[index].id}`, {
+            const updatedNotesRes = fetch(`https://api.watling.dev/note/update/${changedNotesData[index].id}`, {
                 credentials: "include",
                 method: "GET",
                 mode: "cors",
                 body: changedNotesData[index]
             })
-            const notesResponse = await updatedNotesRes.json();
+            .then( console.log(updatedNotesRes.json()))
 
             return {
                 ...state,
