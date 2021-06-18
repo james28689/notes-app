@@ -51,7 +51,7 @@ function Login() {
       })
       const noteData = await notesRes.json();
 
-      dispatch({type: "LOAD_NOTE", payload: noteData});
+      // dispatch({type: "LOAD_NOTE", payload: noteData});
     }
 
   return (
