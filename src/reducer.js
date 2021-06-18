@@ -26,16 +26,16 @@ const Reducer = (state, action) => {
             if(index !== -1) {
                 state.NotesData[index].content = action.payload;
             }
-            console.log(state.NotesData);
+            console.log("UPDATE_NOTE");
 
             return {
                 ...state,
 
             }
         case "LOAD_NOTE":
-            state.NotesData.push(action.payload);
+            state.NotesData = action.payload;
 
-            console.log(state.NotesData);
+            // console.log(state.NotesData);
 
             return {
                 ...state
