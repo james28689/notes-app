@@ -20,8 +20,8 @@ function Calendar( props ) {
             <div className="calendar">
                 <div className="calendarButtons">
                     <h2>May 2021</h2>
-                    <img src={arrow} alt="<"></img>
-                    <img src={arrow} alt=">"></img>
+                    <img className="icon" src={arrow} alt="<"></img>
+                    <img className="icon" src={arrow} alt=">"></img>
                 </div>
                 <div className="days">
                     <p>MON</p>

@@ -58,6 +58,13 @@ const Reducer = (state, action) => {
                 NotesData: action.payload
             }
 
+        case "CHANGE_THEME":
+            console.log(action);
+            return{
+                ...state,
+                theme: action.payload
+            }
+
         default:
             return state;
     }

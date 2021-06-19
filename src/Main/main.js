@@ -42,8 +42,8 @@ function Main({ children }) {
                     initialValue={(state.openFile !== null) ? state.NotesData.find(x => x.id === state.openFile).content : "<h1>Welcome to Notes</h1><p>This is a rich text editor, with support for slash commands.</p><p>You can select a file in the file tree to view its content, or click on folders in the tree to collapse them."}
                     init={{
                         menubar: false,
-                        skin_url: `/skins/ui/custom-dark`,
-                        content_css: `/skins/content/custom-dark/content.min.css`,
+                        skin_url: `/skins/ui/custom-` + state.theme,
+                        content_css: `/skins/content/custom-` + state.theme + `/content.min.css`,
                         icons: "thin",
                         content_style: "@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,700&display=swap');body { font-family: 'Montserrat', sans-serif; } h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; font-weight: 700; }",
 
