@@ -27,7 +27,7 @@ const Reducer = (state, action) => {
             if(index !== -1) {
                 changedNotesData[index].content = action.payload;
             }
-            console.log("UPDATE_NOTE", changedNotesData);
+            console.log("UPDATE_NOTE", changedNotesData, action);
 
             // const updatedNotesRes = fetch(`https://api.watling.dev/note/update/${changedNotesData[index].id}`, {
             //     credentials: "include",
