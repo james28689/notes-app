@@ -22,12 +22,12 @@ const Reducer = (state, action) => {
             }
         case 'UPDATE_NOTE':
             var index = state.NotesData.findIndex((x => x.id === state.openFile));
-            var changedNotesData = state.NotesData
+            var changedNotesData = state.NotesData;
             
             if(index !== -1) {
                 changedNotesData[index].content = action.payload;
             }
-            console.log("UPDATE_NOTE");
+            console.log("UPDATE_NOTE", changedNotesData);
 
             // const updatedNotesRes = fetch(`https://api.watling.dev/note/update/${changedNotesData[index].id}`, {
             //     credentials: "include",
