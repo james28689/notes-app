@@ -9,7 +9,7 @@ function Logout() {
     const [state, dispatch] = useContext(Context);
 
     const toggleTheme = () => {
-        if(state.theme == "light") {
+        if(state.theme === "light") {
             dispatch({type: "CHANGE_THEME", payload:"dark"});
         } else {
             dispatch({type: "CHANGE_THEME", payload:"light"});
@@ -21,8 +21,8 @@ function Logout() {
     }
   
     return (
-        <div class="userContainer">
-            <button onClick={toggleTheme} className="settings"><img className="icon" src={settings}></img></button>
+        <div className="userContainer">
+            <button onClick={toggleTheme} className="settings"><img className="icon" src={settings} alt=""></img></button>
         <GoogleLogout
           clientId={`${env.CLIENT_ID}`}
           buttonText="Logout"
