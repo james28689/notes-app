@@ -29,13 +29,6 @@ const Reducer = (state, action) => {
             }
             console.log("UPDATE_NOTE", changedNotesData, action);
 
-            // const updatedNotesRes = fetch(`https://api.watling.dev/note/update/${changedNotesData[index].id}`, {
-            //     credentials: "include",
-            //     method: "PUT",
-            //     mode: "cors",
-            //     body: changedNotesData[index]
-            // })
-
             var xhr = new XMLHttpRequest();
             var url = `https://api.watling.dev/note/update/${changedNotesData[index].id}`;
             xhr.open("PUT", url, true);
@@ -60,6 +53,7 @@ const Reducer = (state, action) => {
 
         case "CHANGE_THEME":
             console.log(action);
+            localStorage.setItem("theme", action.payload)
             return{
                 ...state,
                 theme: action.payload
