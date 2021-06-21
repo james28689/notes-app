@@ -9,7 +9,7 @@ const initialState = {
     loggedIn: false,
     selectedDay: d.getDay(),
     apiKey: null,
-    theme: localStorage.getItem("theme"),
+    theme: localStorage.getItem("theme") || "light",
 
     NotesData: [],
     openFile: null
