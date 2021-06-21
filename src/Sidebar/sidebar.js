@@ -7,11 +7,20 @@ import Tab from "../SiderbarTab/tab";
 import Search from "../Search/search";
 import UserOptions from "../UserOptions/UserOptions";
 import Tree from "../FolderTree/folderTree";
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {Context} from '../store';
+import Cookies from "js-cookies";
 
 function Sidebar(props) {
-    const [state] = useContext(Context);
+    const [state, dispatch] = useContext(Context);
+
+    useEffect(() => {
+        console.log(Cookies.getItem("userID"))
+        if (Cookies.getItem("userID") === undefined) {
+            dispatch({type: 'SET_LOGIN', payload: false});
+        }
+    })
+
 
     return (
         <div id="Sidebar">

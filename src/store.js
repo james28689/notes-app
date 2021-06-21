@@ -9,7 +9,7 @@ const initialState = {
     loggedIn: false,
     selectedDay: d.getDay(),
     apiKey: null,
-    theme: "light",
+    theme: localStorage.getItem("theme") || "light",
 
     NotesData: [
         // { id: 1, parentId: null, name: "School", type: "folder" },
