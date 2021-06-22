@@ -78,6 +78,7 @@ function RightClickMenu(props) {
 
 function RenderTree(props) {
   var item = props.item;
+  console.log("RenderTree recived:", item);
   return (
     <div>
       {item.map((item, key) => {
@@ -118,7 +119,7 @@ function list_to_tree(list) {
       roots.push(node);
     }
   }
-  console.log(roots);
+  console.log("output from list_to_tree:", roots);
   return roots;
 }
 
