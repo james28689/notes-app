@@ -6,6 +6,7 @@ import React, { useContext, useState } from "react";
 import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
 
 function Folder(props) {
+   console.log("folder", props);
   const [open, setOpen] = useState(props.open);
 
   const ToggleShow = () => {
@@ -17,10 +18,10 @@ function Folder(props) {
       {/* <ContextMenuTrigger id={toString(props.id)}> */}
       <div className={"folder " + (open ? "" : "closed")}>
         <ContextMenuTrigger id={props.id.toString()}>
-          <div onClick={ToggleShow} name={props.name} className="folderInfo">
+          <div onClick={ToggleShow} name={props.title} className="folderInfo">
             <img className="icon" src={caret} alt=">"></img>
 
-            {props.name}
+            {props.title}
           </div>
         </ContextMenuTrigger>
         <div className="folderChildren">{props.children}</div>
@@ -31,6 +32,7 @@ function Folder(props) {
 }
 
 function File(props) {
+  console.log(props);
   const [state, dispatch] = useContext(Context);
 
   const openFile = () => {
@@ -45,7 +47,7 @@ function File(props) {
           className={"file " + (props.id === state.openFile ? "openFile" : "")}
           onClick={openFile}
         >
-          {props.name}
+          {props.title}
         </div>
       </ContextMenuTrigger>
       <RightClickMenu id={props.id}></RightClickMenu>
@@ -87,13 +89,13 @@ function RenderTree(props) {
             <Folder
               key={key}
               id={item.id}
-              name={item.name}
+              title={item.title}
               open={item.children.length > 0 ? true : false}
               children={<RenderTree item={item.children}></RenderTree>}
             ></Folder>
           );
         }
-        return <File key={key} name={item.name} id={item.id}></File>;
+        return <File key={key} title={item.title} id={item.id}></File>;
       })}
     </div>
   );
