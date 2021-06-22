@@ -118,7 +118,7 @@ function list_to_tree(list) {
       roots.push(node);
     }
   }
-  console.log("output from list_toroots);
+  console.log("output from list_toroots");
   return roots;
 }
 
