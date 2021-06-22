@@ -16,7 +16,7 @@ function Sidebar(props) {
 
     useEffect(() => {
         console.log(Cookies.getItem("userID"))
-        if (Cookies.getItem("userID") === undefined) {
+        if (Cookies.getItem("userID") === null) {
             dispatch({type: 'SET_LOGIN', payload: false});
         }
     })
