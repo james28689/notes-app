@@ -61,7 +61,7 @@ function RightClickMenu(props) {
   return (
     <ContextMenu id={props.id.toString()}>
       <MenuItem onClick={newFile}>
-        New File, {props.}
+        New File, {props.item.title}
       </MenuItem>
       <MenuItem onClick={() => {}}>
         New Folder
