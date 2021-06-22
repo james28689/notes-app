@@ -34,21 +34,21 @@ function File(props) {
   const [state, dispatch] = useContext(Context);
 
   const openFile = () => {
-    dispatch({ type: "SET_OPEN_FILE", payload: props.id });
+    dispatch({ type: "SET_OPEN_FILE", payload: props.item.id });
     dispatch({ type: "SET_PAGE", payload: 0 });
   };
 
   return (
     <div>
-      <ContextMenuTrigger id={props.id.toString()}>
+      <ContextMenuTrigger id={props.item.id.toString()}>
         <div
-          className={"file " + (props.id === state.openFile ? "openFile" : "")}
+          className={"file " + (props.item.id === state.openFile ? "openFile" : "")}
           onClick={openFile}
         >
-          {props.title}
+          {props.item.title}
         </div>
       </ContextMenuTrigger>
-      <RightClickMenu id={props.id} item={props.item}></RightClickMenu>
+      <RightClickMenu id={props.item.id} item={props.item}></RightClickMenu>
     </div>
   );
 }
@@ -60,16 +60,13 @@ function RightClickMenu(props) {
   
   return (
     <ContextMenu id={props.id.toString()}>
-      <MenuItem
-        data={{ foo: "bar" }}
-        onClick={newFile}
-      >
-        New File
+      <MenuItem onClick={newFile}>
+        New File, {props.}
       </MenuItem>
-      <MenuItem data={{ foo: "bar" }} onClick={() => {}}>
+      <MenuItem onClick={() => {}}>
         New Folder
       </MenuItem>
-      <MenuItem data={{ foo: "bar" }} onClick={() => {}}>
+      <MenuItem onClick={() => {}}>
         Delete
       </MenuItem>
     </ContextMenu>
@@ -92,7 +89,7 @@ function RenderTree(props) {
             ></Folder>
           );
         }
-        return <File key={key} title={item.title} id={item.id}></File>;
+        return <File key={key} item={item}></File>;
       })}
     </div>
   );
