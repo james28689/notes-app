@@ -6,7 +6,6 @@ import React, { useContext, useState } from "react";
 import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
 
 function Folder(props) {
-   console.log("folder", props);
   const [open, setOpen] = useState(props.open);
 
   const ToggleShow = () => {
@@ -18,10 +17,10 @@ function Folder(props) {
       {/* <ContextMenuTrigger id={toString(props.id)}> */}
       <div className={"folder " + (open ? "" : "closed")}>
         <ContextMenuTrigger id={props.id.toString()}>
-          <div onClick={ToggleShow} name={props.title} className="folderInfo">
+          <div onClick={ToggleShow} name={props.name} className="folderInfo">
             <img className="icon" src={caret} alt=">"></img>
 
-            {props.title}
+            {props.name}
           </div>
         </ContextMenuTrigger>
         <div className="folderChildren">{props.children}</div>
@@ -32,7 +31,6 @@ function Folder(props) {
 }
 
 function File(props) {
-  console.log(props);
   const [state, dispatch] = useContext(Context);
 
   const openFile = () => {
@@ -47,7 +45,7 @@ function File(props) {
           className={"file " + (props.id === state.openFile ? "openFile" : "")}
           onClick={openFile}
         >
-          {props.title}
+          {props.name}
         </div>
       </ContextMenuTrigger>
       <RightClickMenu id={props.id}></RightClickMenu>
@@ -80,7 +78,6 @@ function RightClickMenu(props) {
 
 function RenderTree(props) {
   var item = props.item;
-  console.log("RenderTree recived:", item);
   return (
     <div>
       {item.map((item, key) => {
@@ -89,13 +86,13 @@ function RenderTree(props) {
             <Folder
               key={key}
               id={item.id}
-              title={item.title}
+              name={item.name}
               open={item.children.length > 0 ? true : false}
               children={<RenderTree item={item.children}></RenderTree>}
             ></Folder>
           );
         }
-        return <File key={key} title={item.title} id={item.id}></File>;
+        return <File key={key} name={item.name} id={item.id}></File>;
       })}
     </div>
   );
@@ -121,7 +118,7 @@ function list_to_tree(list) {
       roots.push(node);
     }
   }
-  console.log("output from list_to_tree:", roots);
+  console.log("output from list_toroots);
   return roots;
 }
 
