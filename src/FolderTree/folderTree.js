@@ -2,6 +2,7 @@ import "./folderTree.css";
 import caret from "../Icons/caret.svg";
 import { Context } from "../store";
 import React, { useContext, useState } from "react";
+import Popup from "../Popup/Popup";
 
 import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
 
@@ -16,16 +17,16 @@ function Folder(props) {
     <div>
       {/* <ContextMenuTrigger id={toString(props.id)}> */}
       <div className={"folder " + (open ? "" : "closed")}>
-        <ContextMenuTrigger id={props.id.toString()}>
-          <div onClick={ToggleShow} name={props.name} className="folderInfo">
+        <ContextMenuTrigger id={props.item.id.toString()}>
+          <div onClick={ToggleShow} name={props.item.name} className="folderInfo">
             <img className="icon" src={caret} alt=">"></img>
 
-            {props.name}
+            {props.item.name}
           </div>
         </ContextMenuTrigger>
         <div className="folderChildren">{props.children}</div>
       </div>
-      <RightClickMenu id={props.id}></RightClickMenu>
+      <RightClickMenu id={props.item.id} item={props.item}></RightClickMenu>
     </div>
   );
 }
@@ -54,14 +55,23 @@ function File(props) {
 }
 
 function RightClickMenu(props) {
+  const [state, dispatch] = useContext(Context);
+  
+  if(props.item.type === "folder") {
+    var parentId = props.item.id;
+  } else {
+    var parentId = props.item.parentId;
+  }
+
   const newFile = () => {
-    console.log(props.item);
+    var name = prompt("Enter title:", "New file");
+    console.log(name, parentId, "<h1>" + name + "</h1>");
   }
   
   return (
     <ContextMenu id={props.id.toString()}>
       <MenuItem onClick={newFile}>
-        New File, {props.item.title}
+        New File
       </MenuItem>
       <MenuItem onClick={() => {}}>
         New Folder
@@ -82,8 +92,7 @@ function RenderTree(props) {
           return (
             <Folder
               key={key}
-              id={item.id}
-              name={item.name}
+              item={item}
               open={item.children.length > 0 ? true : false}
               children={<RenderTree item={item.children}></RenderTree>}
             ></Folder>
