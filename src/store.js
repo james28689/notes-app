@@ -12,9 +12,9 @@ const initialState = {
     theme: localStorage.getItem("theme") || "light",
 
     NotesData: [
-        { id: "1", parentId: null,   title: "School", type: "folder" },
-        { id: "2", parentId: "1",    title: "Computing", type: "folder" },
-        { id: "4", parentId: "1",    title: "Exams", type: "folder" },
+        { id: "1", parentId: null,   name: "School", type: "folder" },
+        { id: "2", parentId: "1",    name: "Computing", type: "folder" },
+        { id: "4", parentId: "1",    name: "Exams", type: "folder" },
         { id: "6", parentId: "4",    title: "Exam Timetable", type: "file", content: "test content"},
     ],
     openFile: null

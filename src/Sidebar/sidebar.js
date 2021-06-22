@@ -15,10 +15,10 @@ function Sidebar(props) {
     const [state, dispatch] = useContext(Context);
 
     useEffect(() => {
-        console.log(Cookies.getItem("userID"))
-        if (Cookies.getItem("userID") === null) {
-            dispatch({type: 'SET_LOGIN', payload: false});
-        }
+        // console.log(Cookies.getItem("userID"))
+        // if (Cookies.getItem("userID") === null) {
+        //     dispatch({type: 'SET_LOGIN', payload: false});
+        // }
     })
 
 
