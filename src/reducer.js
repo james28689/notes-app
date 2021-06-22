@@ -46,6 +46,8 @@ const Reducer = (state, action) => {
 
             // console.log(state);
 
+            console.log(action.payload);
+
             return {
                 ...state,
                 NotesData: action.payload
