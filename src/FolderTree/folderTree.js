@@ -48,14 +48,14 @@ function File(props) {
           {props.title}
         </div>
       </ContextMenuTrigger>
-      <RightClickMenu id={props.id}></RightClickMenu>
+      <RightClickMenu id={props.id} item={props.item}></RightClickMenu>
     </div>
   );
 }
 
 function RightClickMenu(props) {
   const newFile = () => {
-    console.log("new file");
+    console.log(props.item);
   }
   
   return (
