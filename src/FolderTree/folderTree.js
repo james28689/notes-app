@@ -118,6 +118,7 @@ function list_to_tree(list) {
       roots.push(node);
     }
   }
+  console.log(roots);
   return roots;
 }
 
