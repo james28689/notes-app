@@ -45,7 +45,7 @@ function File(props) {
           className={"file " + (props.id === state.openFile ? "openFile" : "")}
           onClick={openFile}
         >
-          {props.name}
+          {props.title}
         </div>
       </ContextMenuTrigger>
       <RightClickMenu id={props.id}></RightClickMenu>
@@ -92,7 +92,7 @@ function RenderTree(props) {
             ></Folder>
           );
         }
-        return <File key={key} name={item.name} id={item.id}></File>;
+        return <File key={key} title={item.title} id={item.id}></File>;
       })}
     </div>
   );
