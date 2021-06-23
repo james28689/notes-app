@@ -4,6 +4,8 @@ import React, {useContext} from 'react';
 import {Context} from '../store';
 import "./login.css";
 
+import { firebaseExport, auth, firestore } from "../firebase"
+
 // const refreshTokenSetup = (res) => {
 //   let refreshTiming = (res.tokenObj.expires_in || 3600 - 5 * 60) * 1000;
 
@@ -21,54 +23,16 @@ import "./login.css";
 function Login() {
     const [state, dispatch] = useContext(Context);
 
+    const signInWithGoogle = () => {
+      const provider = new firebaseExport.auth.GoogleAuthProvider()
+      auth.signInWithPopup(provider);
 
-    const handleLogin = async googleData => {
-  
-      console.log("Handling login!")
-  
-      const res = await fetch("https://api.watling.dev/auth/google", {
-        credentials: "include",
-        method: "POST",
-        body: JSON.stringify({
-          token: googleData.tokenId
-        }),
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json"
-        },
-      })
-  
-      const data = await res.json()
-      console.log(data);
-      dispatch({type: 'SET_LOGIN', payload: true});
-  
-      
-  
-      const notesRes = await fetch("https://api.watling.dev/note/user", {
-        credentials: "include",
-        method: "GET",
-        mode: "cors"
-      })
-      const noteData = await notesRes.json();
-
-      dispatch({type: "LOAD_NOTE", payload: noteData});
+      dispatch({ type: "SET_LOGIN", payload: true })
     }
 
   return (
     <div>
-      <GoogleLogin
-        clientId={`${env.CLIENT_ID}`}
-        buttonText="Login"
-        onSuccess={handleLogin}
-        // onFailure={handleLogin}
-        cookiePolicy={"single_host_origin"}
-        style={{ marginTop: "100px" }}
-        isSignedIn={true}
-
-        render={renderProps => (
-            <button className="login" onClick={renderProps.onClick} disabled={renderProps.disabled}>Login</button>
-          )}
-      />
+      <button onClick={signInWithGoogle} className="login">Log In</button>
     </div>
   )
 }

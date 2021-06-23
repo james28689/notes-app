@@ -11,8 +11,17 @@ import React, {useContext, useEffect} from 'react';
 import {Context} from '../store';
 import Cookies from "js-cookies";
 
+import { firebaseExport, auth, firestore } from "../firebase"
+
+import { useCollectionData } from "react-firebase-hooks/firestore"
+
 function Sidebar(props) {
     const [state, dispatch] = useContext(Context);
+
+    const notesRef = firestore.collection("notes");
+    const query = notesRef.orderBy("createdAt", "desc");
+
+    const [notes] = useCollectionData(query, { idField: "id" });
 
     useEffect(() => {
         // console.log(Cookies.getItem("userID"))
@@ -41,7 +50,7 @@ function Sidebar(props) {
             </div>
 
             <div className="middle">
-                <Tree />
+                { notes && notes.map(note => <h1> {note.title} </h1>) }
             </div>
             
             <div className="bottom">

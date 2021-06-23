@@ -5,6 +5,9 @@ import React, {useContext, useRef} from 'react';
 import {Context} from '../store';
 import { Editor } from '@tinymce/tinymce-react';
 
+// import { firebaseExport, auth, firestore } from "../firebase"
+
+// import { useCollectionData } from "react-firebase-hooks/firestore"
 
 function Main({ children }) {
 

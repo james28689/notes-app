@@ -5,6 +5,8 @@ import {Context} from '../store';
 import "./UserOptions.css";
 import settings from "../Icons/settings.svg";
 
+import { firebase, auth, firestore } from "../firebase"
+
 function Logout() {
     const [state, dispatch] = useContext(Context);
 
@@ -16,22 +18,15 @@ function Logout() {
         }
     }
 
-    const onSuccess = () => {
+    const signOut = () => {
+        auth.signOut()
         dispatch({type: 'SET_LOGIN', payload: false});
     }
   
     return (
         <div className="userContainer">
             <button onClick={toggleTheme} className="settings"><img className="icon" src={settings} alt=""></img></button>
-        <GoogleLogout
-          clientId={`${env.CLIENT_ID}`}
-          buttonText="Logout"
-          onLogoutSuccess={onSuccess}
-
-          render={renderProps => (
-            <button className="logout" onClick={renderProps.onClick} disabled={renderProps.disabled}>Logout</button>
-          )}
-        />
+            <button onClick={signOut}>Sign Out</button>
       </div>
     )
 }
