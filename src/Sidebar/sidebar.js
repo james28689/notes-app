@@ -9,17 +9,17 @@ import UserOptions from "../UserOptions/UserOptions";
 import Tree from "../FolderTree/folderTree";
 import React, {useContext, useEffect} from 'react';
 import {Context} from '../store';
-import Cookies from "js-cookies";
 
 import { firebaseExport, auth, firestore } from "../firebase"
-
 import { useCollectionData } from "react-firebase-hooks/firestore"
 
 function Sidebar(props) {
     const [state, dispatch] = useContext(Context);
 
+    var user = auth.currentUser;
+
     const notesRef = firestore.collection("notes");
-    const query = notesRef.orderBy("createdAt", "desc");
+    const query = notesRef.where("userID", "==", user.uid)
 
     const [notes] = useCollectionData(query, { idField: "id" });
 

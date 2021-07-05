@@ -16,7 +16,7 @@ function App() {
 
   return (
       <div className={"App " + state.theme}>
-        { user ? <div><Sidebar/> <Main /></div> : <LoginPage /> }
+        { user ? <div><Sidebar/><Main /></div> : <LoginPage /> }
       </div>
   );
 }
