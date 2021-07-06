@@ -1,6 +1,6 @@
 import "./Sidebar.css";
 import calendar from "../Icons/calendar.svg";
-import notes from "../Icons/notes.svg";
+import notesIcon from "../Icons/notes.svg";
 
 import Divider from "../Divider/divider";
 import Tab from "../SiderbarTab/tab";
@@ -37,7 +37,7 @@ function Sidebar(props) {
                 <Tab items= {[
                 {
                     "name": "Notes",
-                    "icon": notes
+                    "icon": notesIcon
                 },
                 {
                     "name": "Calendar",
