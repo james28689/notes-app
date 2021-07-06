@@ -5,6 +5,7 @@ import {Context} from '../store';
 import "./login.css";
 
 import { firebaseExport, auth, firestore } from "../firebase"
+import { useCollectionData } from "react-firebase-hooks/firestore"
 
 // const refreshTokenSetup = (res) => {
 //   let refreshTiming = (res.tokenObj.expires_in || 3600 - 5 * 60) * 1000;
@@ -26,8 +27,20 @@ function Login() {
     const signInWithGoogle = () => {
       const provider = new firebaseExport.auth.GoogleAuthProvider()
       auth.signInWithPopup(provider);
-
       dispatch({ type: "SET_LOGIN", payload: true })
+
+      // var user = auth.currentUser;
+      // const notesRef = firestore.collection("notes");
+      // const notes = notesRef.where("userID", "==", user.uid)
+      //   .get()
+      //   .then((querySnapshot) => {
+      //     querySnapshot.forEach(doc => {
+      //       console.log(doc.id, "=>", doc.data())
+      //     })
+      //   })
+      //   .catch(
+      //     console.log("Error occurred fetching result of query from Firestore.")
+      //   )                   
     }
 
   return (

@@ -3,6 +3,12 @@ import Reducer from './reducer'
 
 var d = new Date();
 
+// Note type:
+// content, date, id, parentID, title, userID
+//
+//
+//
+
 const initialState = {
     selected: 0,
     loggedIn: true,

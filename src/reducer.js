@@ -1,3 +1,5 @@
+import { firestore } from "./firebase"
+
 const Reducer = (state, action) => {
     switch (action.type) {
         case 'SET_PAGE':
@@ -29,13 +31,17 @@ const Reducer = (state, action) => {
             }
             console.log("UPDATE_NOTE", changedNotesData, action);
 
-            var xhr = new XMLHttpRequest();
-            var url = `https://api.watling.dev/note/update/${changedNotesData[index].id}`;
-            xhr.open("PUT", url, true);
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.withCredentials = true;
-            var data = JSON.stringify(changedNotesData[index])
-            xhr.send(data);
+            changedNotesData.forEach(note => {
+                console.log(note)
+                const noteRef = firestore.collection("notes").doc(note.id);
+                return noteRef.update({
+                    content: note.content,
+                    date: note.date,
+                    parentID: note.parentID,
+                    title: note.title,
+                    userID: note.userID
+                })
+            })
 
             return {
                 ...state,

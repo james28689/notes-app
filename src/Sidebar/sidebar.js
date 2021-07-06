@@ -22,12 +22,10 @@ function Sidebar(props) {
     const query = notesRef.where("userID", "==", user.uid)
 
     const [notes] = useCollectionData(query, { idField: "id" });
+    // console.log(notes)
 
     useEffect(() => {
-        // console.log(Cookies.getItem("userID"))
-        // if (Cookies.getItem("userID") === null) {
-        //     dispatch({type: 'SET_LOGIN', payload: false});
-        // }
+        dispatch({type: "LOAD_NOTE", payload: notes})
     })
 
 
@@ -50,7 +48,7 @@ function Sidebar(props) {
             </div>
 
             <div className="middle">
-                { notes && notes.map(note => <h1> {note.title} </h1>) }
+                { notes && notes.map(note => <NoteTitle item={note} />) }
             </div>
             
             <div className="bottom">
@@ -58,6 +56,24 @@ function Sidebar(props) {
                 <Search />
             </div>
             
+        </div>
+    )
+}
+
+function NoteTitle(props) {
+    const [state, dispatch] = useContext(Context);
+
+    const openFile = () => {
+        dispatch({ type: "SET_OPEN_FILE", payload: props.item.id });
+        dispatch({ type: "SET_PAGE", payload: 0 });
+    };
+
+    return(
+        <div
+          className={"file " + (props.item.id === state.openFile ? "openFile" : "")}
+          onClick={openFile}
+        >
+            {props.item.title}
         </div>
     )
 }
